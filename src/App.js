@@ -1,7 +1,15 @@
+import Header from "./Header";
+import GeneralInfo from "./Generalnfo";
+import Footer from "./Footer";
+import EducationalExp from "./EducationalExp";
+import JobExp from "./JobExp";
+
 function App() {
   return (
     <div className="App">
-       <h1>CV Project</h1>
+      <Header />
+      <GeneralInfo />
+      <Footer />
     </div>
   );
 }
