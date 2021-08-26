@@ -8,7 +8,6 @@ function GeneralInfo() {
         <FormGroup label="Last Name:" type="text" placeholder="Last Name" />
         <FormGroup label="Mobile:" type="number" placeholder="Mobile" />
         <FormGroup label="Email:" type="email" placeholder="Email" />
-        <button type="submit">Submit</button>
       </form>
     </section>
   );

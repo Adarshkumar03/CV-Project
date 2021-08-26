@@ -9,6 +9,9 @@ function App() {
     <div className="App">
       <Header />
       <GeneralInfo />
+      <JobExp />
+      <EducationalExp />
+      <button>Save CV</button>
       <Footer />
     </div>
   );

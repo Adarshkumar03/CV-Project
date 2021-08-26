@@ -1,10 +1,10 @@
 function EducationalExp() {
   return (
     <section>
-      <form>
-        <button type="submit">Submit</button>
-      </form>
-      <button type="button">Add</button>
+      <h2>Education</h2>
+      <button type="button">Add Education</button>
     </section>
   );
 }
+
+export default EducationalExp;
