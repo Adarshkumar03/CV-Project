@@ -1,5 +1,4 @@
 import { useState } from "react";
-import FormGroup from "./FormGroup";
 
 function JobExp() {
   const [workEx, setWorkEx] = useState({
@@ -22,21 +21,13 @@ function JobExp() {
   };
 
   const handleChange = (e) => {
-    let workTemp = workEx;
-    if (isNaN(e.target.value)) {
-      workTemp[e.target.name] += e.target.value;
-    } else {
-      workTemp[e.target.name] =
-        parseInt(workTemp[e.target.name]) + parseInt(e.target.value);
-    }
-    setWorkEx(workTemp);
+    const { name, value } = e.target;
+    setWorkEx({ ...workEx, [name]: value });
   };
 
   const saveWork = (e) => {
     e.preventDefault();
-    let temp = workExArray;
-    temp.push(workEx);
-    setWorkExArray(temp);
+    setWorkExArray([...workExArray, workEx]);
     setWorkEx({ jobTitle: "", company: "", yearsWorked: 0, location: "" });
     console.log(workExArray);
   };
@@ -57,34 +48,43 @@ function JobExp() {
       })}
       {isFormActive && (
         <form>
-          <FormGroup
-            label="Job Title:"
-            type="text"
-            name="jobTitle"
-            value={workEx.jobTitle}
-            onChange={handleChange}
-          />
-          <FormGroup
-            label="Company:"
-            type="text"
-            name="company"
-            value={workEx.company}
-            onChange={handleChange}
-          />
-          <FormGroup
-            label="Years Worked:"
-            type="number"
-            name="yearsWorked"
-            value={workEx.yearsWorked}
-            onChange={handleChange}
-          />
-          <FormGroup
-            label="Location:"
-            type="text"
-            name="location"
-            value={workEx.location}
-            onChange={handleChange}
-          />
+          <div>
+            <label>Title</label>
+            <input
+              type="text"
+              name="jobTitle"
+              onChange={handleChange}
+              value={workEx.jobTitle}
+            />
+          </div>
+          <div>
+            <label>Company</label>
+            <input
+              type="text"
+              name="company"
+              onChange={handleChange}
+              value={workEx.company}
+            />
+          </div>
+          <div>
+            <label>Years Worked</label>
+            <input
+              type="number"
+              name="yearsWorked"
+              onChange={handleChange}
+              value={workEx.yearsWorked}
+            />
+          </div>
+
+          <div>
+            <label>Location</label>
+            <input
+              type="text"
+              name="location"
+              onChange={handleChange}
+              value={workEx.location}
+            />
+          </div>
           <button onClick={saveWork}>Save</button>
           <button onClick={handleCancelCLick}>Cancel</button>
         </form>
