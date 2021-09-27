@@ -8,7 +8,7 @@ function JobExp() {
     location: ""
   });
 
-  const [isFormActive, setIsFormActive] = useState(true);
+  const [isFormActive, setIsFormActive] = useState(false);
 
   const [workExArray, setWorkExArray] = useState([]);
 
