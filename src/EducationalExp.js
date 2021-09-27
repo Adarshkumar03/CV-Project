@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function EducationalExp() {
+function EducationalExp({setCV, cv}) {
   const [eduEx, setEduEx] = useState({
     nameOfInstitution: "",
     stream: "",
@@ -18,6 +18,7 @@ function EducationalExp() {
   const saveEdu = (e) => {
     e.preventDefault();
     setEduExArray([...eduExArray, eduEx]);
+    setCV({...cv, educationalInfo: [...cv.educationalInfo, eduEx]});
     setEduEx({
       nameOfInstitution: "",
       stream: "",

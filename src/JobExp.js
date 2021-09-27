@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function JobExp() {
+function JobExp({setCV, cv}) {
   const [workEx, setWorkEx] = useState({
     jobTitle: "",
     company: "",
@@ -28,8 +28,9 @@ function JobExp() {
   const saveWork = (e) => {
     e.preventDefault();
     setWorkExArray([...workExArray, workEx]);
+    setCV({...cv, jobInfo: [...cv.jobInfo, workEx]});
     setWorkEx({ jobTitle: "", company: "", yearsWorked: 0, location: "" });
-    console.log(workExArray);
+    console.log(cv);
   };
 
   return (
