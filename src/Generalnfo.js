@@ -13,18 +13,23 @@ function GeneralInfo({setCV, cv}) {
     setCV({...cv, personalInfo:{...personal}});
   }
   return (
-    <section>
+    <section className="general">
+      <h2>General Information</h2> 
       <form>
-        <div>
-          <label>Full Name</label>
-          <input type="text" name="fullName" onChange={handleChange} value={personal.fullName} placeholder="Full Name" />
+        <div className="form-group">
+          <label>Full Name:</label>
+          <input type="text" name="firstName" onChange={handleChange} value={personal.fullName} placeholder="First Name" />
         </div>
-        <div>
-          <label>Mobile</label>
+        <div className="form-group">
+          <label>Last Name:</label>
+          <input type="text" name="lastName" onChange={handleChange} value={personal.fullName} placeholder="Last Name" />
+        </div>
+        <div className="form-group">
+          <label>Mobile:</label>
           <input type="number" name="mobile" onChange={handleChange} value={personal.mobile} placeholder="Mobile" />
         </div>
-        <div>
-          <label>Email</label>
+        <div className="form-group">
+          <label>Email:</label>
           <input type="email" name="email" onChange={handleChange} value={personal.email} placeholder="Email" />
         </div>
       </form>

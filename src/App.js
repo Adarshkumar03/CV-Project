@@ -8,7 +8,8 @@ import { useState } from "react/cjs/react.development";
 function App() {
   const [cv, setCV] = useState({
     personalInfo:{
-      fullName:"",
+      firstName:"",
+      lastName:"",
       mobile:0,
       email:""
     },
@@ -21,8 +22,9 @@ function App() {
       <GeneralInfo setCV={setCV} cv={cv} />
       <JobExp setCV={setCV} cv={cv} />
       <EducationalExp setCV={setCV} cv={cv} />
-      <div>
-        <p>{cv.personalInfo.fullName}</p>
+      <section>
+        <p>{cv.personalInfo.firstName}</p>
+        <p>{cv.personalInfo.lastName}</p>
         <p>{cv.personalInfo.mobile}</p>
         <p>{cv.personalInfo.email}</p>
         <h2>Edu Info</h2>
@@ -43,8 +45,8 @@ function App() {
             </div>
           })
         }
-      </div>
-      <button>Save CV</button>
+      </section>
+      <button onClick={()=>{window.print()}}>Print</button>
       <Footer />
     </div>
   );
