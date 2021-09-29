@@ -6,11 +6,12 @@
 body{
     box-sizing: border-box;
     background-color:#FAF3E0;
+    font-family:"Inter", sans-serif;
 }
 
 header{
-    background-color: #1E212D;
-    color:#FAF3E0;
+    background-color: #BE3144;
+    color:#D3D6DB;
     position: fixed;
     top: 0;
     left: 0;
@@ -20,19 +21,37 @@ header{
 }
 
 h2{
-    color:#1E212D;
-    border-bottom: 2px solid black;
+    color:#BE3144;
     margin-bottom: 17px;
     padding:0;
     width: fit-content;
+    font-weight: 800;
 }
 
 section{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+label{
+    font-weight: 600;
+}
+
+button{
+    padding:6px;
+    font-weight: 600;
+    margin:0 auto;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border-color: #1E212D;
+}
+
+form{
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .general{
@@ -65,9 +84,23 @@ section{
     padding: 8px;
 }
 
-footer{
-    background-color: #1E212D;
-    color: #FAF3E0;
-    padding:10px;
-    text-align: center;
+.educational{
+  
 }
+
+.job-list-item{
+    padding:10px;
+    background-color: #3A4750;
+    color:#D3D6DB;
+}
+
+.edu-list-item{
+    padding:10px;
+    background-color: #3A4750;
+    color: #D3D6DB;
+}
+
+.actual-cv{
+    display: none;
+}
+

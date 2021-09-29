@@ -34,63 +34,70 @@ function JobExp({setCV, cv}) {
   };
 
   return (
-    <section>
+    <section className="job">
       <h2>Work Experience</h2>
       {workExArray.map((work, index) => {
         return (
-          <div key={index}>
-            <p>{work.jobTitle}</p>
-            <p>{work.company}</p>
-            <p>{work.yearsWorked}</p>
-            <p>{work.location}</p>
+          <div key={index} className="job-list-item">
+            <p>Job Title:  {work.jobTitle}</p>
+            <p>Company:  {work.company}</p>
+            <p>Years Worked:  {work.yearsWorked}</p>
+            <p>Location:  {work.location}</p>
             <hr />
           </div>
         );
       })}
       {isFormActive && (
         <form>
-          <div>
-            <label>Title</label>
+          <div className="form-group">
+            <label>Title:</label>
             <input
               type="text"
               name="jobTitle"
               onChange={handleChange}
               value={workEx.jobTitle}
+              required
             />
           </div>
-          <div>
-            <label>Company</label>
+          <div className="form-group">
+            <label>Company:</label>
             <input
               type="text"
               name="company"
               onChange={handleChange}
               value={workEx.company}
+              required
             />
           </div>
-          <div>
-            <label>Years Worked</label>
+          <div className="form-group">
+            <label>Years Worked:</label>
             <input
               type="number"
               name="yearsWorked"
               onChange={handleChange}
               value={workEx.yearsWorked}
+              required
             />
           </div>
 
-          <div>
-            <label>Location</label>
+          <div className="form-group">
+            <label>Location:</label>
             <input
               type="text"
               name="location"
               onChange={handleChange}
               value={workEx.location}
+              required
             />
           </div>
           <button onClick={saveWork}>Save</button>
           <button onClick={handleCancelCLick}>Cancel</button>
         </form>
       )}
-      <button onClick={addWorkExp}>Add Work Experience</button>
+      {
+        !isFormActive&&<button onClick={addWorkExp}>Add Work Experience</button>
+      }
+      
     </section>
   );
 }

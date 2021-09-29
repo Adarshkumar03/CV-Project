@@ -37,55 +37,59 @@ function EducationalExp({setCV, cv}) {
   };
 
   return (
-    <section>
+    <section className="educational">
       <h2>Education</h2>
       {eduExArray.map((edu, index) => {
         return (
-          <div key={index}>
-            <p>{edu.nameOfInstitution}</p>
-            <p>{edu.stream}</p>
-            <p>{edu.per}</p>
-            <p>{edu.yearOfpassing}</p>
+          <div key={index} className="edu-list-item">
+            <p>Name of Institution:  {edu.nameOfInstitution}</p>
+            <p>Stream:  {edu.stream}</p>
+            <p>Percentage:  {edu.per}</p>
+            <p>year of Passing:  {edu.yearOfpassing}</p>
             <hr />
           </div>
         );
       })}
       {isActive && (
         <form>
-          <div>
+          <div className="form-group">
             <label>Name of Institution</label>
             <input
               type="text"
               name="nameOfInstitution"
               onChange={handleChange}
               value={eduEx.nameOfInstitution}
+              required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label>Stream/Subject</label>
             <input
               type="text"
               name="stream"
               onChange={handleChange}
               value={eduEx.stream}
+              required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label>Percentage</label>
             <input
               type="number"
               name="per"
               onChange={handleChange}
               value={eduEx.per}
+              required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label>Year of Passing</label>
             <input
               type="text"
               name="yearOfpassing"
               onChange={handleChange}
               value={eduEx.yearOfpassing}
+              required
             />
           </div>
           <button onClick={saveEdu}>Save</button>
@@ -93,9 +97,11 @@ function EducationalExp({setCV, cv}) {
         </form>
       )}
 
-      <button type="button" onClick={addEdu}>
+      {
+        !isActive&&<button type="button" onClick={addEdu}>
         Add Education
       </button>
+      }
     </section>
   );
 }

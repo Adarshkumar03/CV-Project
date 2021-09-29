@@ -1,6 +1,5 @@
 import Header from "./Header";
 import GeneralInfo from "./Generalnfo";
-import Footer from "./Footer";
 import EducationalExp from "./EducationalExp";
 import JobExp from "./JobExp";
 import { useState } from "react/cjs/react.development";
@@ -22,7 +21,7 @@ function App() {
       <GeneralInfo setCV={setCV} cv={cv} />
       <JobExp setCV={setCV} cv={cv} />
       <EducationalExp setCV={setCV} cv={cv} />
-      <section>
+      <section className="actual-cv">
         <p>{cv.personalInfo.firstName}</p>
         <p>{cv.personalInfo.lastName}</p>
         <p>{cv.personalInfo.mobile}</p>
@@ -47,7 +46,6 @@ function App() {
         }
       </section>
       <button onClick={()=>{window.print()}}>Print</button>
-      <Footer />
     </div>
   );
 }
