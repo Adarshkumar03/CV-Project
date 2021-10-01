@@ -22,30 +22,40 @@ function App() {
       <JobExp setCV={setCV} cv={cv} />
       <EducationalExp setCV={setCV} cv={cv} />
       <section className="actual-cv">
+        <h2>Personal Info</h2> 
         <p>{cv.personalInfo.firstName}</p>
         <p>{cv.personalInfo.lastName}</p>
         <p>{cv.personalInfo.mobile}</p>
         <p>{cv.personalInfo.email}</p>
+        <hr/>
         <h2>Edu Info</h2>
         {
           cv.educationalInfo.map((item, index)=>{
-            return <div key={index}>
+            return <div key={index}> 
               <p>{item.nameOfInstitution}</p>
               <p>{item.stream}</p>
+              <p>{item.per}</p>
+              <p>{item.yearOfpassing}</p>
             </div>
           })
         }
+        <hr/>
         <h2>Job Info</h2>
         {
           cv.jobInfo.map((item, index)=>{
             return <div key={index}>
               <p>{item.jobTitle}</p>
               <p>{item.company}</p>
+              <p>{item.yearsWorked}</p>
+              <p>{item.location}</p>
             </div>
           })
         }
       </section>
-      <button onClick={()=>{window.print()}}>Print</button>
+      <button onClick={()=>{
+        const cv = document.getElementsByClassName("actual-cv");
+        cv.print();
+        }}>Print</button>
     </div>
   );
 }
