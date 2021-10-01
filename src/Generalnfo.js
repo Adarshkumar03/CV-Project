@@ -2,7 +2,8 @@ import {useState} from 'react';
 function GeneralInfo({setCV, cv}) {
   
   const [personal, setPersonal] = useState({
-    fullName:"",
+    firstName:"",
+    lastName:"",
     mobile:0,
     email:""
   })
@@ -17,7 +18,7 @@ function GeneralInfo({setCV, cv}) {
       <h2>General Information</h2> 
       <form>
         <div className="form-group">
-          <label>Full Name:</label>
+          <label>First Name:</label>
           <input type="text" name="firstName" onChange={handleChange} value={personal.fullName} placeholder="First Name" required/>
         </div>
         <div className="form-group">

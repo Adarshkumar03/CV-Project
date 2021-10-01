@@ -46,7 +46,6 @@ function EducationalExp({setCV, cv}) {
             <p>Stream:  {edu.stream}</p>
             <p>Percentage:  {edu.per}</p>
             <p>year of Passing:  {edu.yearOfpassing}</p>
-            <hr />
           </div>
         );
       })}

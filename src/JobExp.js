@@ -43,7 +43,6 @@ function JobExp({setCV, cv}) {
             <p>Company:  {work.company}</p>
             <p>Years Worked:  {work.yearsWorked}</p>
             <p>Location:  {work.location}</p>
-            <hr />
           </div>
         );
       })}
