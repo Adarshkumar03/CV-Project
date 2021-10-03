@@ -37,7 +37,7 @@ function EducationalExp({setCV, cv}) {
 
   const deleteEdu = (index) => {
     let tempArray = eduExArray;
-    let removed = tempArray.splice(index, 1);
+    tempArray.splice(index, 1);
     setEduExArray(tempArray);
     setCV({...cv, educationalInfo: [...eduExArray]});
   }

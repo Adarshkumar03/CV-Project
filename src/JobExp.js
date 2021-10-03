@@ -35,7 +35,7 @@ function JobExp({setCV, cv}) {
 
   const deleteJob = (index) => {
     let tempArray = workExArray;
-    let removed = tempArray.splice(index, 1);
+    tempArray.splice(index, 1);
     setWorkExArray(tempArray);   
     setCV({...cv, jobInfo: [...workExArray]});
   }
