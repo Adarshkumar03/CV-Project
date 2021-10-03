@@ -33,6 +33,13 @@ function JobExp({setCV, cv}) {
     console.log(cv);
   };
 
+  const deleteJob = (index) => {
+    let tempArray = workExArray;
+    let removed = tempArray.splice(index, 1);
+    setWorkExArray(tempArray);   
+    setCV({...cv, jobInfo: [...workExArray]});
+  }
+
   return (
     <section className="job">
       <h2>Work Experience</h2>
@@ -43,6 +50,7 @@ function JobExp({setCV, cv}) {
             <p>Company:  {work.company}</p>
             <p>Years Worked:  {work.yearsWorked}</p>
             <p>Location:  {work.location}</p>
+            <button onClick={()=>deleteJob(index)}>Delete</button>
           </div>
         );
       })}

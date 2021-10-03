@@ -25,7 +25,6 @@ function EducationalExp({setCV, cv}) {
       per: 0,
       yearOfpassing: new Date().getFullYear()
     });
-    console.log(eduExArray);
   };
 
   const addEdu = () => {
@@ -35,6 +34,13 @@ function EducationalExp({setCV, cv}) {
   const cancelForm = () => {
     setIsActive(false);
   };
+
+  const deleteEdu = (index) => {
+    let tempArray = eduExArray;
+    let removed = tempArray.splice(index, 1);
+    setEduExArray(tempArray);
+    setCV({...cv, educationalInfo: [...eduExArray]});
+  }
 
   return (
     <section className="educational">
@@ -46,6 +52,7 @@ function EducationalExp({setCV, cv}) {
             <p>Stream:  {edu.stream}</p>
             <p>Percentage:  {edu.per}</p>
             <p>year of Passing:  {edu.yearOfpassing}</p>
+            <button onClick={()=>deleteEdu(index)}>Delete</button>
           </div>
         );
       })}

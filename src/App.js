@@ -15,13 +15,26 @@ function App() {
     educationalInfo:[],
     jobInfo:[]
   });
+
+  const printCV = () => {
+    var divContents = document.getElementById("CV").innerHTML;
+    console.log(divContents);  
+    var printWindow = window.open('', '', 'height=200,width=400');  
+    printWindow.document.write('<html><head><title>Print DIV Content</title>');  
+    printWindow.document.write('</head><body >');  
+    printWindow.document.write(divContents);  
+    printWindow.document.write('</body></html>');  
+    printWindow.document.close();  
+    printWindow.print(); 
+   }
+
   return (
     <div className="App">
       <Header />
       <GeneralInfo setCV={setCV} cv={cv} />
       <JobExp setCV={setCV} cv={cv} />
       <EducationalExp setCV={setCV} cv={cv} />
-      <section className="actual-cv">
+      <section className="actual-cv" id="CV">
         <h2>Personal Info</h2> 
         <p>{cv.personalInfo.firstName}</p>
         <p>{cv.personalInfo.lastName}</p>
@@ -52,10 +65,7 @@ function App() {
           })
         }
       </section>
-      <button onClick={()=>{
-        const cv = document.getElementsByClassName("actual-cv");
-        cv.print();
-        }}>Print</button>
+      <button onClick={printCV}>Print</button>
     </div>
   );
 }
