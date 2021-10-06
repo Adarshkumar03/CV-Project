@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function JobExp({setCV, cv}) {
+export const JobExp = ({setCV, cv}) => {
   const [workEx, setWorkEx] = useState({
     jobTitle: "",
     company: "",
@@ -108,5 +108,3 @@ function JobExp({setCV, cv}) {
     </section>
   );
 }
-
-export default JobExp;

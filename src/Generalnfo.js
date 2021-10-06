@@ -1,5 +1,5 @@
 import {useState} from 'react';
-function GeneralInfo({setCV, cv}) {
+export const GeneralInfo = ({setCV, cv}) => {
   
   const [personal, setPersonal] = useState({
     firstName:"",
@@ -37,5 +37,3 @@ function GeneralInfo({setCV, cv}) {
     </section>
   );
 }
-
-export default GeneralInfo;

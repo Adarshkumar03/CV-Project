@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function EducationalExp({setCV, cv}) {
+export const EducationalExp = ({setCV, cv}) => {
   const [eduEx, setEduEx] = useState({
     nameOfInstitution: "",
     stream: "",
@@ -111,5 +111,3 @@ function EducationalExp({setCV, cv}) {
     </section>
   );
 }
-
-export default EducationalExp;
