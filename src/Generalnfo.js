@@ -6,7 +6,7 @@ function GeneralInfo({setCV, cv}) {
     lastName:"",
     mobile:0,
     email:""
-  })
+  });
 
   const handleChange = (e) =>{
     const {name, value} = e.target;
