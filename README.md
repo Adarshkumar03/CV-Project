@@ -21,4 +21,4 @@ A Simple CV Make made using ReactJS
 
 ### Development Mode
 
-1.  Start the Vite develpment server: `npm start`
+1.  Start the develpment server: `npm start`
